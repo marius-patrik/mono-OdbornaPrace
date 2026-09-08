@@ -1,9 +1,13 @@
-name: Deploy Docs
+name: Deploy Documentation
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: write
+  deployments: write
 
 jobs:
   deploy-docs:

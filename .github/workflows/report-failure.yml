@@ -1,9 +1,13 @@
-name: Report Failure
+name: Report Pipeline Failure
 
 on:
   workflow_run:
     workflows: [CI, Deploy Documentation, Release, Update Submodules]
     types: [completed]
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   report-failure:

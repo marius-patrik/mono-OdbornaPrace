@@ -1,4 +1,4 @@
-name: Project Automation
+name: Project Board Automation
 
 on:
   issues:
@@ -6,6 +6,12 @@ on:
   pull_request:
     types: [opened, edited, closed, ready_for_review, reopened]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+  repository-projects: write
 
 jobs:
   project-automation:
