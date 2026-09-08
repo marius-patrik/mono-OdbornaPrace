@@ -1,0 +1,15 @@
+name: Ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  ci:
+    uses: marius-patrik/DarkFactory/.github/workflows/ci.yml@darkfactory
+    with:
+      pipeline-repo: marius-patrik/DarkFactory
+      pipeline-ref: "f0d838e891c73656952ca18bc49a8cae871dfed5"
+    secrets: inherit

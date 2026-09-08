@@ -1,0 +1,14 @@
+name: Deploy Docs
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy-docs:
+    uses: marius-patrik/DarkFactory/.github/workflows/deploy-docs.yml@darkfactory
+    with:
+      pipeline-repo: marius-patrik/DarkFactory
+      pipeline-ref: "f0d838e891c73656952ca18bc49a8cae871dfed5"
+    secrets: inherit

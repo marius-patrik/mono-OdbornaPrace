@@ -1,0 +1,14 @@
+name: Report Failure
+
+on:
+  workflow_run:
+    workflows: [CI, Deploy Documentation, Release, Update Submodules]
+    types: [completed]
+
+jobs:
+  report-failure:
+    uses: marius-patrik/DarkFactory/.github/workflows/report-failure.yml@darkfactory
+    with:
+      pipeline-repo: marius-patrik/DarkFactory
+      pipeline-ref: "f0d838e891c73656952ca18bc49a8cae871dfed5"
+    secrets: inherit

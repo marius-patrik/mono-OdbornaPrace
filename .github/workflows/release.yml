@@ -1,0 +1,14 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  release:
+    uses: marius-patrik/DarkFactory/.github/workflows/release.yml@darkfactory
+    with:
+      pipeline-repo: marius-patrik/DarkFactory
+      pipeline-ref: "f0d838e891c73656952ca18bc49a8cae871dfed5"
+    secrets: inherit

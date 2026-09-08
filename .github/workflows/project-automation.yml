@@ -1,0 +1,16 @@
+name: Project Automation
+
+on:
+  issues:
+    types: [opened, labeled, unlabeled, closed, reopened]
+  pull_request:
+    types: [opened, edited, closed, ready_for_review, reopened]
+  workflow_dispatch:
+
+jobs:
+  project-automation:
+    uses: marius-patrik/DarkFactory/.github/workflows/project-automation.yml@darkfactory
+    with:
+      pipeline-repo: marius-patrik/DarkFactory
+      pipeline-ref: "f0d838e891c73656952ca18bc49a8cae871dfed5"
+    secrets: inherit

@@ -1,0 +1,50 @@
+{
+  "$comment": "Everything the shared pipeline needs and cannot detect. The pipeline itself is identical across every repository that uses it; this file is the only thing that differs.",
+  "identity": {
+    "owner": "marius-patrik",
+    "repo": "mono-OdbornaPrace",
+    "display_name": "mono-OdbornaPrace",
+    "project_title": "mono-OdbornaPrace",
+    "default_branch": "main",
+    "description": "Super-repozitář odborné práce (GJKT): text, šablona a DarkFactory jako praktická část",
+    "topics": ["odborna-prace", "gjkt", "monorepo", "submodules", "typst"]
+  },
+  "upstream": {
+    "repo": "marius-patrik/DarkFactory",
+    "ref": null
+  },
+  "environment": {
+    "$comment": "Detection walks into the submodules and correctly reports this repository as both code and paper, but each submodule already builds and publishes itself. Rebuilding here would typeset the same thesis twice and publish two copies that could disagree, so no packages are declared and the site is an index pointing at theirs.",
+    "packages": [],
+    "documentation": {
+      "site": {
+        "command": "python3 scripts/build-index.py"
+      }
+    }
+  },
+  "board": {
+    "$comment": "Items land on this repository's own board and on the board aggregating every repository.",
+    "global_title": "Global",
+    "link_boards": ["Global"]
+  },
+  "pages": {
+    "build_type": "legacy",
+    "branch": "gh-pages",
+    "path": "/"
+  },
+  "areas": {
+    "$default": "ci",
+    "submodules": {
+      "description": "Ukazatele na submoduly a jejich větve",
+      "keywords": ["submodul", "submodule", "pointer", "pin", "vetev"]
+    },
+    "docs": {
+      "description": "Rozcestník a dokumentační stránky",
+      "keywords": ["doc", "docs", "index", "rozcestnik", "stranka", "readme"]
+    },
+    "ci": {
+      "description": "GitHub Actions workflows a automatizace repozitáře",
+      "keywords": ["ci", "action", "workflow", "pipeline", "automation"]
+    }
+  }
+}

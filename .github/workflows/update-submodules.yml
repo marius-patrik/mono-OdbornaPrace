@@ -1,0 +1,14 @@
+name: Update Submodules
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-submodules:
+    uses: marius-patrik/DarkFactory/.github/workflows/update-submodules.yml@darkfactory
+    with:
+      pipeline-repo: marius-patrik/DarkFactory
+      pipeline-ref: "f0d838e891c73656952ca18bc49a8cae871dfed5"
+    secrets: inherit
