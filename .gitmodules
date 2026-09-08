@@ -1,0 +1,12 @@
+[submodule "template"]
+	path = template
+	url = https://github.com/marius-patrik/template-OdbornaPrace.git
+	branch = main
+[submodule "prace"]
+	path = prace
+	url = https://github.com/marius-patrik/OdbornaPrace.git
+	branch = main
+[submodule "darkfactory"]
+	path = darkfactory
+	url = https://github.com/marius-patrik/DarkFactory.git
+	branch = darkfactory
