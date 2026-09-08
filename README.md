@@ -54,3 +54,17 @@ git submodule update --remote --merge
 Šablona odpovídá kapitole 4 školního průvodce: okraje 2,5 cm (u hřbetu 3 cm),
 patkové písmo 12 b, řádkování 1,5, číslování kapitol bez tečky, čísla stran
 v zápatí od úvodu. Podrobné srovnání je v `template/README.md`.
+
+## Automatizace
+
+Repozitář používá sdílený systém [DarkFactory](https://github.com/marius-patrik/DarkFactory):
+
+| Postup | Co dělá |
+| :--- | :--- |
+| `update-submodules` | Denně posune ukazatele submodulů na špičku větve, kterou sledují |
+| `deploy-docs` | Publikuje rozcestník na <https://marius-patrik.github.io/mono-OdbornaPrace/> |
+| `release` | Vydá označenou verzi |
+| `report-failure` | Selhání kteréhokoli postupu založí úkol, který se po nápravě sám uzavře |
+
+Pracovní postupy se nekopírují, nýbrž volají a jsou připnuté ke konkrétní verzi
+systému, takže se mezi repozitáři nemohou rozejít.
