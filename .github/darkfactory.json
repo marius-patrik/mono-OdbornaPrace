@@ -17,7 +17,7 @@
   },
   "upstream": {
     "repo": "marius-patrik/DarkFactory",
-    "ref": "52816adc67cf9327831ecba775e8c9fdde764051"
+    "ref": "56e369b18af1151b2cc651b953796435fc39d6c3"
   },
   "environment": {
     "$comment": "Detection walks into the submodules and correctly reports this repository as both code and paper, but each submodule already builds and publishes itself. Rebuilding here would typeset the same thesis twice and publish two copies that could disagree, so no packages are declared and the site is an index pointing at theirs.",
