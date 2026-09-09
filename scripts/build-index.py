@@ -44,7 +44,10 @@ def repositories(root: str = ".") -> dict:
     if not os.path.isfile(path):
         return {}
     with open(path, encoding="utf-8") as handle:
-        return {m.group("name"): m.group("repo") for m in REPO_PATTERN.finditer(handle.read())}
+        return {
+            m.group("name"): m.group("repo")
+            for m in REPO_PATTERN.finditer(handle.read())
+        }
 
 
 def build(root: str = ".", out: str = "site") -> str:
@@ -58,7 +61,9 @@ def build(root: str = ".", out: str = "site") -> str:
         Path of the written file.
     """
     repos = repositories(root)
-    owner = os.environ.get("GITHUB_REPOSITORY", "marius-patrik/mono-OdbornaPrace").split("/")[0]
+    owner = os.environ.get(
+        "GITHUB_REPOSITORY", "marius-patrik/mono-OdbornaPrace"
+    ).split("/")[0]
     cards = []
     embed = ""
     for name, title, description in ENTRIES:
