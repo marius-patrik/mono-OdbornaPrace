@@ -24,6 +24,10 @@ When working on the thesis manuscript (`mono-OdbornaPrace`), agents must strictl
   - Highlights factual inaccuracies, conceptual misconceptions (e.g., ReAct meaning "Read and Act" instead of "Reasoning and Acting"), terminology blunders, logical gaps, grammatical/typing errors, and duplicate content (e.g., duplicate config files across chapters).
   - Explicitly states the error and what needs correction.
   - Removed once the underlying defect is resolved in the manuscript.
+- **Orange Callout (`#critique[...]` — 🔥 *Hloubková kritika / Oponentura:* )**:
+  - Uncompromising, rigorous, deep academic and architectural critique ("no holding back").
+  - Identifies hand-waving claims, vanity metrics, lack of empirical baseline or rigorous experimental methodology, theoretical blind spots (lossy context compaction vs semantic drift, uncontained meta-harness mutations), and defense vulnerabilities against tough academic reviewers.
+  - Removed once the passage is defended, reframed with intellectual honesty, mathematically/theoretically grounded, or backed by concrete empirical data.
 - **Typst Formatting & Stability**:
   - Avoid fragile external diagramming packages that trigger runtime panics (e.g., incompatible Fletcher/CeTZ versions). Prefer clean vector SVGs in `img/`.
   - Watch out for escape sequences in Typst (e.g., do not use `\r` in math/text; use unicode `→` or `$arrow$`).
