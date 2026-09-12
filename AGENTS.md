@@ -37,3 +37,12 @@ When working on the thesis manuscript (`mono-OdbornaPrace`), agents must strictl
 - **Typst Formatting & Stability**:
   - Avoid fragile external diagramming packages that trigger runtime panics (e.g., incompatible Fletcher/CeTZ versions). Prefer clean vector SVGs in `img/`.
   - Watch out for escape sequences in Typst (e.g., do not use `\r` in math/text; use unicode `→` or `$arrow$`).
+
+## Typst Live Preview Workflow
+- **Preferred Preview Mode**: Standard native browser PDF view inside Google Chrome with automatic live reload.
+- **Never Use Custom Canvas/Web Viewers**: Do NOT use `tinymist preview` or web-canvas / SVG previewers with custom control toolbars. The user strictly prefers the normal, native Google Chrome PDF viewer interface.
+- **Preview Architecture & Commands**:
+  1. Background compiler: `typst watch --font-path fonts main.typ out/main.pdf` in `prace/`.
+  2. Background live reload server: `python3 scripts/preview_server.py` in `prace/` (serves the native Chrome PDF viewer via an auto-reloading iframe at `http://127.0.0.1:3333`).
+  3. Browser launch: `open -a "Google Chrome" "http://127.0.0.1:3333"`.
+
